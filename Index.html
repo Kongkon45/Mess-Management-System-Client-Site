@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Management System</title>
+    <!-- tailwind css link  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+<nav class="bg-blue-500 p-4 sticky top-0">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+            <a href="#" class="text-white text-xl font-semibold">Mess Management System</a>
+        </div>
+        <div class="hidden md:flex space-x-4">
+            <a href="Index.html" class="text-white bg-green-600 py-2 px-5 font-bold rounded-md">Customer</a>
+            <a href="Market.html" class="text-white bg-green-600 py-2 px-5 font-bold rounded-md">Market</a>
+            <a href="Manager.html" class="text-white bg-green-600 py-2 px-5 font-bold rounded-md">Manager</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-blue-500 py-2">
+    <a href="Index.html" class="mx-2 text-white px-4 py-2 bg-green-600 py-2 px-5 font-bold rounded-md">Customer</a>
+    <a href="Market.html" class="mx-2 px-4 py-2 bg-green-600 py-2 px-5 font-bold rounded-md">Market</a>
+    <a href="Manager.html" class="mx-2 px-4 py-2 bg-green-600 py-2 px-5 font-bold rounded-md">Manager</a>
+</div>
+
+    
+
+    <!-- All customer Info  -->
+    <section>
+        <h1 class="text-center text-3xl font-bold underline mt-5 u">All Customer Information</h1>
+        <div>
+            <table class="w-full mt-10 mb-14">
+                <thead>
+                    <tr>
+                        <th class="border-2 border-black">Id</th>
+                        <th class="border-2 border-black">Name</th>
+                        <th class="border-2 border-black">Email</th>
+                        <th class="border-2 border-black">Deposit</th>
+                        <th class="border-2 border-black">Meal</th>
+                        <th class="border-2 border-black">MealRate</th>
+                        <th class="border-2 border-black">TotalCost</th>
+                        <th class="border-2 border-black">Due</th>
+                        <th class="border-2 border-black">Refund</th>
+                        <th class="border-2 border-black">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center" id="tableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="grid grid-cols-2">
+            <!-- Update Customer Information  -->
+
+            <div class="hidden" id="Update">
+                <h1 class="text-center text-3xl mt-10 font-bold underline">Update Customer Information</h1>
+                <div class="w-96 mx-auto bg-gray-200 mt-10 p-10 rounded-md mb-10">
+                    <form onsubmit="handleUpdate(event)">
+                        <input class="w-full border-2 border-black rounded-md mt-2 pl-2" type="number" name="id" placeholder="Enter id ..." required>
+                        <input class="w-full border-2 border-black rounded-md mt-2 pl-2" type="text" name="name" placeholder="Enter your name ..." required>
+                        <input class="w-full border-2 border-black rounded-md mt-2 pl-2" type="email" name="email" placeholder="Enter your email ..." required>
+                        <input class="w-full border-2 border-black rounded-md mt-2 pl-2" type="number" name="deposit" placeholder="Enter your deposit ..." required>
+                        <input class="w-full border-2 border-black rounded-md mt-2 pl-2 mb-5" type="number" name="meal" placeholder="Enter your meal ..." required>
+                        <button class="bg-orange-400 rounded-md text-white px-5 py-1 my-1 ml-28" type="submit">Update</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Update Customer Information  -->
+            
+            <div class="hidden" id="post">
+                <h1 class="text-center text-3xl mt-10 font-bold underline">Create New Customer</h1>
+                <div class="w-96 mx-auto bg-gray-200 mt-10 p-10 rounded-md">
+                    <form onSubmit="handlePost(event)">
+                        <input class="w-full border-2 border-black mt-2 pl-2 rounded-md" required type="text" name="name" placeholder="Enter your Name ...">
+                        <input class="w-full border-2 border-black mt-2 pl-2 rounded-md" required type="email" name="email" placeholder="Enter your Email ...">
+                        <input class="w-full border-2 border-black mt-2 pl-2 rounded-md" required type="number" name="deposit" placeholder="Enter your Deposit ...">
+                        <input class="w-full border-2 border-black mt-2 pl-2 rounded-md mb-5" required type="number" name="meal" placeholder="Enter your Meal ...">
+                        <button class="bg-green-600 rounded-md text-white px-5 py-1 my-1 ml-20" type="submit">Add Customer</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+   
+
+    <section>
+
+    </section>
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
